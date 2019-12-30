@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#263238</color>
-    <color name="colorPrimaryDark">#000a12</color>
+    <color name="colorPrimaryDark">#000A12</color>
     <color name="colorAccent">#4f5b62</color>
 
     <color name="colorSecondary">#1976d2</color>
     <color name="colorSecondaryLight">#63a4ff</color>
-    <color name="colorSecondaryDark">#004ba0</color>
+    <color name="colorSecondaryDark">#004BA0</color>
 
     <color name="primaryTextColor">#ffffff</color>
+    <color name="my_yellow">#FFEB3B</color>
 </resources>

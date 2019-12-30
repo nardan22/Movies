@@ -2,18 +2,14 @@ package com.nariman.movies.homescreen
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.nariman.movies.R
-import com.nariman.movies.RecyclerViewPagedListAdapter
 import com.nariman.movies.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
@@ -34,9 +30,10 @@ class HomeFragment : Fragment(){
         binding.homeViewModel = viewModel
 
 
-        val adapter = RecyclerViewPagedListAdapter(RecyclerViewPagedListAdapter.OnItemClickListener{
-            viewModel.onClickNavigation(it)
-        })
+        val adapter =
+            RecyclerViewPagedListAdapter(RecyclerViewPagedListAdapter.OnItemClickListener {
+                viewModel.onClickNavigation(it)
+            })
 
         binding.moviesRecyclerView.adapter = adapter
 
@@ -59,6 +56,6 @@ class HomeFragment : Fragment(){
         super.onDestroy()
 
         // Unbind adapter to avoid memory leak
-        moviesRecyclerView.adapter = null
+        if (moviesRecyclerView != null) moviesRecyclerView.adapter = null
     }
 }
