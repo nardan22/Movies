@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.nariman.movies.homescreen.HomeFragment"
+        android:name="com.nariman.movies.popular.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/home_fragment">
         <action

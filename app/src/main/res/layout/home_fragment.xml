@@ -6,16 +6,15 @@
     <data>
         <variable
             name="homeViewModel"
-            type="com.nariman.movies.homescreen.HomeViewModel" />
+            type="com.nariman.movies.popular.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F3EDDD"
+        android:background="@color/colorSecondaryDark"
         android:paddingStart="4dp"
         android:paddingEnd="4dp">
-<!--        tools:background="@color/design_default_color_primary"-->
 
         <LinearLayout
             android:layout_width="match_parent"
