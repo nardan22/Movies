@@ -5,6 +5,7 @@ import androidx.paging.DataSource
 import com.nariman.movies.model.Movie
 import com.nariman.movies.model.MovieDetails
 import com.nariman.movies.model.PopularMoviesResponse
+import com.nariman.movies.model.TopRatedMoviesResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.Response
@@ -18,4 +19,7 @@ interface MovieRequestInterface {
 
     @GET("movie/popular")
     suspend fun getPopularMovies(@Query("page")page: Int, @Query("api_key")apiKey: String): Response<PopularMoviesResponse>
+
+    @GET("movie/toprated")
+    suspend fun getTopRatedMovies(): Response<TopRatedMoviesResponse>
 }

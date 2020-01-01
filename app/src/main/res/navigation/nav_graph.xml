@@ -32,4 +32,9 @@
             app:launchSingleTop="false"
             app:popUpTo="@+id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/topRatedFragment"
+        android:name="com.nariman.movies.toprated.TopRatedFragment"
+        android:label="TopRatedFragment"
+        tools:layout="@layout/top_rated_fragment"/>
 </navigation>
