@@ -14,4 +14,13 @@
     <string name="upcoming">Upcoming</string>
     <string name="now_playing">Now Playing</string>
     <string name="movie_poster">Movie Poster</string>
+    <string name="movie_poster_image">Movie Poster Image</string>
+    <string name="trailer">Trailer</string>
+    <string name="related_movies">Related Movies</string>
+    <string name="cast_s_photo">Cast\'s Photo</string>
+    <string name="not_available">Not available</string>
+    <string name="place_of_birth">Place of birth:</string>
+    <string name="birthday">Birthday:</string>
+    <string name="deathday">Deathday:</string>
+    <string name="starred_in_movies">Starred in movies</string>
 </resources>

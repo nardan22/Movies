@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="castVM"
+            type="com.nariman.movies.castdetail.CastDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSecondaryDark"
+        tools:context=".castdetail.CastDetailsFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginBottom="56dp"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- Cast's Photo view -->
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/castImageView"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/cast_s_photo"
+                    app:imageUrl="@{castVM.castDetails.profilePath}"
+                    tools:src="@drawable/top_rated" />
+
+
+                <!-- Cast's name view -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="@color/primaryTextColor"
+                    android:text="@{castVM.castDetails.name}"
+                    tools:text="Angelina Julie" />
+
+
+                <!-- Horizontal line separator view -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <!-- Place of birth views -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginEnd="@dimen/space_between_textviews"
+                        android:text="@string/place_of_birth" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:visibility='@{ castVM.castDetails.placeOfBirth.compareTo("null") == 0 ? View.GONE : View.VISIBLE }'
+                        android:text='@{castVM.castDetails.placeOfBirth.compareTo("null") == 0 ? @string/not_available : castVM.castDetails.placeOfBirth }'
+                        tools:text="Los Angeles, USA" />
+                </LinearLayout>
+
+
+                <!-- BirthDay views -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_between_textviews"
+                        android:text="@string/birthday"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text='@{castVM.castDetails.birthday.compareTo("null") == 0 ? @string/not_available : castVM.castDetails.birthday }'
+                        android:textSize="18sp"
+                        tools:text="1975-05-06" />
+                </LinearLayout>
+
+
+                <!-- DeathDay views -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility='@{ castVM.castDetails.deathday.compareTo("null") == 0 ? View.GONE : View.VISIBLE }'>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_between_textviews"
+                        android:text="@string/deathday"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{castVM.castDetails.deathday}"
+                        android:textSize="18sp"
+                        tools:text="2015-05-06" />
+                </LinearLayout>
+
+
+                <!-- Biography views -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text='@{castVM.castDetails.biography.compareTo("null") == 0 ? "" : castVM.castDetails.biography }'
+                    android:textSize="18sp"
+                    android:visibility='@{ castVM.castDetails.biography.compareTo("null") == 0 ? View.GONE : View.VISIBLE }'
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm" />
+
+
+                <!-- Horizontal line separator view -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <!-- Biography views -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/starred_in_movies"
+                    android:textSize="18sp"
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm" />
+
+
+                <!-- Movies with Cast view -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/starredMoviesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/horizontal_movie_list_item" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

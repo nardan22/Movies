@@ -7,10 +7,12 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
+// moshi JSON converter
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
+// retrofit instance
 object RetrofitInstance {
 
     private val retrofit = Retrofit.Builder()
